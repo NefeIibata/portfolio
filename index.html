@@ -5,12 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="js/scripts.js">
 
     <title>Portfolio</title>
 </head>
 
 <body>
+    <div class="sticky-header">
+        <div class="header-links">
+            <a href="https://github.com/NefeIibata" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://t.me/Nefelibatata" target="_blank"><i class="fab fa-telegram"></i></a>
+            <a href="https://discord.com/users/nefelibatata" target="_blank"><i class="fab fa-discord"></i></a>
+        </div>
+        <div class="header-name">
+            Volodymyr Shastun
+        </div>
+    </div>
     <div class="line">
         <div class="header">
             <div class="header-monitor">
@@ -43,9 +56,55 @@
                 <h1 style="color: rgb(55, 55, 55); font-size: 65px;"> DEVELOPER</h1>
                 <h2 style="color: gray;">Developer of games and websites. <br> As well as anything for personal
                     interest.</h2>
+                <div class="header-anchor">
+                    <a href="#about" title="About me"><i class="fas fa-user"></i></a>
+                    <a href="#unity-projects" title="Unity projects"><i class="fas fa-gamepad"></i></a>
+                    <a href="#web-projects" title="Web-projects"><i class="fas fa-code"></i></a>
+                </div>
             </div>
         </div>
     </div>
+
+
+    <section id="about">
+        <div class="line about-container">
+            <div class="about-left">
+                <div class="sphere">
+                    <div class="icon" style="--i: 0;"><i class="fab fa-unity"></i></div>
+                    <div class="icon" style="--i: 1;"><i class="fab fa-cuttlefish"></i></div>
+                    <div class="icon" style="--i: 2;"><i class="fab fa-git"></i></div>
+                    <div class="icon" style="--i: 5;"><i class="fab fa-discord"></i></div>
+                    <div class="icon" style="--i: 6;"><i class="fab fa-firefox"></i></div>
+                    <div class="icon" style="--i: 9;"><i class="fab fa-html5"></i></div>
+                    <div class="icon" style="--i: 10;"><i class="fab fa-css3"></i></div>
+                    <div class="icon" style="--i: 11;"><i class="fab fa-js-square"></i></div>
+                    <div class="icon" style="--i: 8;"><i class="fab fa-trello"></i></div>
+                </div>
+            </div>
+            <div class="about-right">
+                <h2>About me</h2>
+                <p>I´am Volodymyr, I´am a Unity c# game developer with more than 2 years of experience and more than 4
+                    years of programming experience. </p>
+
+                <p>During this time, I managed to make several websites, made several unity games, and made a local bot
+                    for Discord. </p>
+
+                <p>In my free time, I play games or study new branches of programming.</p>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section id="unity-projects">
+        <h2>Unity projects</h2>
+        <p>Описание проектов в Unity...</p>
+    </section>
+
+    <section id="web-projects">
+        <h2>Web-projects</h2>
+        <p>Описание веб-проектов...</p>
+    </section>
 </body>
 
 </html>
