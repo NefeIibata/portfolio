@@ -363,3 +363,86 @@ body {
 #gameCanvas {
     display: none; 
 }
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {  
+
+    .line {
+        margin-left: 8%;
+        margin-right: 8%;
+    }
+
+    .header-text {
+        margin-left: 50px;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {  
+
+    .line {
+        margin-left: 3%;
+        margin-right: 3%;
+    }
+
+    .header {
+        margin-top: 150px;
+        margin-bottom: 100px;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .header-text {
+        margin-bottom: 50px;
+    }
+
+    .about-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .about-right{
+        margin-bottom: 150px;
+    }
+
+    .about-left {
+        cursor: pointer;
+        margin-left: 0px;
+    }
+}
+
+@media only screen and (max-width: 425px) {  
+
+    .header-text h1{
+        font-size: 40px !important;
+    }
+    
+    .header-text h2{
+        font-size: 20px !important;
+    }
+
+    .fas {
+        font-size: 20px;
+    }
+
+    .monitor {
+        width: 300px;
+        height: 200px;
+    }
+
+    .monitor .content h3 {
+        font-size: 18px;
+    }
+
+    .monitor .content .content-animation .pixel {
+        width: 10px;
+        height: 10px;
+    }
+
+    .header {
+        margin-top: 100px;
+    }
+}
