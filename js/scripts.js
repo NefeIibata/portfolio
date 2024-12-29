@@ -5,3 +5,13 @@ document.querySelector('.about-left').addEventListener('mousemove', function (e)
     const sphere = document.querySelector('.sphere');
     sphere.style.transform = `rotateX(${y * 40}deg) rotateY(${x * 40}deg)`;
 });
+
+
+const showGameButton = document.getElementById("showGameButton");
+const gameCanvas = document.getElementById("gameCanvas");
+
+showGameButton.addEventListener("click", function() {
+    gameCanvas.style.display = "block";
+
+    showGameButton.style.display = "none";
+});

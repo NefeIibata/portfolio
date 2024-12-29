@@ -123,7 +123,7 @@
                 <h3>Ready-made projects</h3>
                 <p>It's empty so far. It will be in the future!</p>
             </div>
-    
+
             <!-- 2. I'm working on them now -->
             <div class="project-section">
                 <h3>I'm working on them now</h3>
@@ -132,10 +132,11 @@
                     <a href="https://github.com/Urban-Druids/Merge-Shelter" target="_blank">
                         <strong>Merge Shelter</strong>
                     </a>
-                    <p>The game is based on popular mobile games like Match 3 and Merge. <br> The game will be related to pets.</p>
+                    <p>The game is based on popular mobile games like Match 3 and Merge. <br> The game will be related
+                        to pets.</p>
                 </div>
             </div>
-    
+
             <!-- 3. Test tasks -->
             <div class="project-section">
                 <h3>Test tasks</h3>
@@ -144,17 +145,19 @@
                     <a href="https://github.com/NefeIibata/TaskTestAudety" target="_blank">
                         <strong>Task Test Audety</strong>
                     </a>
-                    <p>A test task for Audety. This is a simple mobile game where the mechanics of procedural level generation are implemented.</p>
+                    <p>A test task for Audety. This is a simple mobile game where the mechanics of procedural level
+                        generation are implemented.</p>
                     <br>
                 </div>
                 <div class="project">
                     <a href="https://github.com/NefeIibata/DumbSmith" target="_blank">
                         <strong>Dumb Smith</strong>
                     </a>
-                    <p>My first test task for my first team, which implements the mechanics of assembling a sword, namely hammering the guard on the sword.</p>
+                    <p>My first test task for my first team, which implements the mechanics of assembling a sword,
+                        namely hammering the guard on the sword.</p>
                 </div>
             </div>
-    
+
             <!-- 4. Abandoned or unfinished -->
             <div class="project-section">
                 <h3>Abandoned or unfinished</h3>
@@ -163,21 +166,27 @@
                     <a href="https://github.com/Urban-Druids/Forgeventure" target="_blank">
                         <strong>Forgeventure</strong>
                     </a>
-                    <p>The first big project that I was happy to participate in. <br> The game was supposed to combine elements of building weapons while playing as a blacksmith, which we could take with us for a trip to the caves where we could collect resources to craft new and better weapons. Alternatively, weapons could be sold to other villagers by completing orders for a specific type of weapon.</p>
+                    <p>The first big project that I was happy to participate in. <br> The game was supposed to combine
+                        elements of building weapons while playing as a blacksmith, which we could take with us for a
+                        trip to the caves where we could collect resources to craft new and better weapons.
+                        Alternatively, weapons could be sold to other villagers by completing orders for a specific type
+                        of weapon.</p>
                     <br>
                 </div>
                 <div class="project">
                     <a href="https://github.com/Urban-Druids/Project-Hill-Racer" target="_blank">
                         <strong>Project Hill Racer</strong>
                     </a>
-                    <p>A mobile game inspired by another already popular and now "classic" Hill Climb Racing. <br> The original idea of which was to raise an initial budget to support the work of the team.</p>
+                    <p>A mobile game inspired by another already popular and now "classic" Hill Climb Racing. <br> The
+                        original idea of which was to raise an initial budget to support the work of the team.</p>
                     <br>
                 </div>
                 <div class="project">
                     <a href="https://github.com/NefeIibata/Pet" target="_blank">
                         <strong>Pet</strong>
                     </a>
-                    <p>My first casual game, which I developed to gain my first experience with Unity and its built-in and external tools. <br> The game itself did not have any innovative gameplay mechanics.</p>
+                    <p>My first casual game, which I developed to gain my first experience with Unity and its built-in
+                        and external tools. <br> The game itself did not have any innovative gameplay mechanics.</p>
                 </div>
             </div>
         </div>
@@ -187,19 +196,21 @@
         <div class="line">
             <h2>Web Projects</h2>
             <p>Websites I created during breaks from Unity development.</p>
-            
+
             <div class="project-section">
                 <div class="project">
                     <a href="https://www.timmendorfer-pflegedienst.de/index" target="_blank">
                         <strong>Timmendorfer Pflegedienst</strong>
                     </a>
-                    <p>A website for an elderly care service, providing essential information and contact options for their clients.</p>
+                    <p>A website for an elderly care service, providing essential information and contact options for
+                        their clients.</p>
                 </div>
                 <div class="project">
                     <a href="https://stadam-dienstleistungen.de/index" target="_blank">
                         <strong>Stadam Dienstleistungen</strong>
                     </a>
-                    <p>A cleaning service website that offers detailed service descriptions and an easy way to get in touch.</p>
+                    <p>A cleaning service website that offers detailed service descriptions and an easy way to get in
+                        touch.</p>
                 </div>
                 <div class="project">
                     <a href="https://lottas-loft.de/index" target="_blank">
@@ -210,6 +221,191 @@
             </div>
         </div>
     </section>
+
+    <section id="game">
+        <div class="line">
+            <h2 id="gameTitle" style="text-align: center; color: #0f0; cursor: pointer;">Space Shooter Game</h2>
+            <canvas style="margin-left: 300px;" id="gameCanvas" width="600" height="600"></canvas>
+        </div>
+    </section>
+
+    <script>
+        let gameStarted = false;
+        const canvas = document.getElementById("gameCanvas");
+        const ctx = canvas.getContext("2d");
+
+        let ship = {
+            x: canvas.width / 2 - 25,
+            y: canvas.height - 60,
+            width: 50,
+            height: 50,
+            speed: 5,
+            dx: 0,
+        };
+
+        let bullets = [];
+        let enemies = [];
+        let score = 0;
+
+        function drawShip() {
+            ctx.fillStyle = "#00F";
+            ctx.beginPath();
+            ctx.moveTo(ship.x, ship.y);
+            ctx.lineTo(ship.x + 50, ship.y);
+            ctx.lineTo(ship.x + 25, ship.y - 20);
+            ctx.closePath();
+            ctx.fill();
+        }
+
+        function drawBullets() {
+            ctx.fillStyle = "#FFF";
+            bullets.forEach(bullet => {
+                ctx.fillRect(bullet.x, bullet.y, bullet.width, bullet.height);
+            });
+        }
+
+        function drawEnemies() {
+            enemies.forEach(enemy => {
+                ctx.fillStyle = "#F00";
+
+                ctx.beginPath();
+                ctx.moveTo(enemy.x + enemy.width / 2, enemy.y);
+                ctx.lineTo(enemy.x, enemy.y + enemy.height);
+                ctx.lineTo(enemy.x + enemy.width, enemy.y + enemy.height);
+                ctx.closePath();
+                ctx.fill();
+
+                ctx.fillStyle = "#FF0";
+                ctx.beginPath();
+                ctx.arc(enemy.x + enemy.width / 4, enemy.y + enemy.height, 5, 0, Math.PI * 2);
+                ctx.arc(enemy.x + 3 * enemy.width / 4, enemy.y + enemy.height, 5, 0, Math.PI * 2);
+                ctx.fill();
+            });
+        }
+
+        function moveShip() {
+            ship.x += ship.dx;
+
+            if (ship.x < 0) ship.x = 0;
+            if (ship.x + ship.width > canvas.width) ship.x = canvas.width - ship.width;
+        }
+
+        function createBullet() {
+            bullets.push({
+                x: ship.x + ship.width / 2 - 2,
+                y: ship.y,
+                width: 4,
+                height: 10,
+                speed: 5,
+            });
+        }
+
+        function moveBullets() {
+            bullets.forEach((bullet, index) => {
+                bullet.y -= bullet.speed;
+
+                if (bullet.y < 0) {
+                    bullets.splice(index, 1);
+                }
+            });
+        }
+
+        function createEnemy() {
+            let enemyWidth = 50;
+            let enemyHeight = 50;
+            let x = Math.random() * (canvas.width - enemyWidth);
+            enemies.push({ x: x, y: 0, width: enemyWidth, height: enemyHeight, speed: 2 });
+        }
+
+        function moveEnemies() {
+            enemies.forEach((enemy, index) => {
+                enemy.y += enemy.speed;
+
+                if (enemy.y > canvas.height) {
+                    enemies.splice(index, 1);
+                }
+
+                bullets.forEach((bullet, bulletIndex) => {
+                    if (bullet.x < enemy.x + enemy.width &&
+                        bullet.x + bullet.width > enemy.x &&
+                        bullet.y < enemy.y + enemy.height &&
+                        bullet.y + bullet.height > enemy.y) {
+                        enemies.splice(index, 1);
+                        bullets.splice(bulletIndex, 1);
+                        score++;
+                    }
+                });
+            });
+        }
+
+        function checkShipCollision() {
+            enemies.forEach((enemy, index) => {
+                if (ship.x < enemy.x + enemy.width &&
+                    ship.x + ship.width > enemy.x &&
+                    ship.y < enemy.y + enemy.height &&
+                    ship.y + ship.height > enemy.y) {
+                    score = 0;
+                    enemies.splice(index, 1);
+                }
+            });
+        }
+
+        function drawScore() {
+            ctx.font = "20px Arial";
+            ctx.fillStyle = "#FFF";
+            ctx.fillText("Score: " + score, 10, 30);
+        }
+
+        function updateGame() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            moveShip();
+            moveBullets();
+            moveEnemies();
+
+            drawShip();
+            drawBullets();
+            drawEnemies();
+            drawScore();
+
+            checkShipCollision();
+
+            requestAnimationFrame(updateGame);
+        }
+
+        function keyDownHandler(e) {
+            if (e.key === "ArrowLeft") {
+                ship.dx = -ship.speed;
+            } else if (e.key === "ArrowRight") {
+                ship.dx = ship.speed;
+            }
+            if (e.key === " ") {
+                createBullet();
+            }
+        }
+
+        function keyUpHandler(e) {
+            if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+                ship.dx = 0;
+            }
+        }
+
+
+        document.getElementById("gameTitle").addEventListener("click", function () {
+            if (!gameStarted) {
+                gameStarted = true;
+                document.getElementById("gameTitle").style.display = "none";
+                canvas.style.display = "block";
+                updateGame();
+            }
+        });
+
+        window.addEventListener("keydown", keyDownHandler);
+        window.addEventListener("keyup", keyUpHandler);
+
+        setInterval(createEnemy, 1000);
+        canvas.style.display = "none"; 
+    </script>
 </body>
 
 </html>
