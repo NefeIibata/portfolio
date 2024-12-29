@@ -11,7 +11,7 @@ body {
 }
 
 .header{
-    height: 100vh;
+    height: 80vh;
 }
 
 .sticky-header {
@@ -224,7 +224,7 @@ body {
     height: 100%;
     border-radius: 50%;
     transform-style: preserve-3d;
-    animation: rotate 20s infinite linear;
+    animation: rotate 25s infinite linear;
 }
 
 .icon {
@@ -255,7 +255,7 @@ body {
         transform: rotateY(0deg);
     }
     100% {
-        transform: rotateY(400deg);
+        transform: rotateY(360deg);
     }
 }
 
@@ -275,8 +275,76 @@ body {
 
 
 
-
-
-
-
 /* About me END  */
+
+/* Projects START */
+
+
+#unity-projects {
+    background-color: #2e2e2e;
+    color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#unity-projects h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #00c3ff;
+}
+
+.project-section {
+    margin: 30px 0;
+    border-top: 2px solid #444;
+    padding-top: 20px;
+}
+
+.project-section h3 {
+    font-size: 1.8em;
+    color: #00c3ff;
+    margin-bottom: 10px;
+}
+
+.project a {
+    color: #ffb400;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+.project a:hover {
+    color: #ffeb3b;
+    text-decoration: underline;
+}
+
+.project p {
+    margin: 5px 0 15px;
+    font-size: 0.9em;
+    color: #ddd;
+}
+
+
+
+/* Projects END */
+
+/* Web-projects START*/
+
+#web-projects {
+    background-color: #3d3d3d;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#web-projects h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ff7043;
+}
+
+#web-projects p {
+    margin-bottom: 40px;
+    font-size: 1em;
+    color: #ddd;
+}
+/* Web-projects END*/
