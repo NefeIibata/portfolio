@@ -1,8 +1,19 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: rgb(21, 19, 18);
     margin: 0;
     padding: 0;
+    overflow: auto;
+    scrollbar-width: thin;
     font-family: Arial, sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
 }
 
 .line {
