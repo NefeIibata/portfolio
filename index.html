@@ -237,6 +237,8 @@
             <h2 id="gameTitle" style="text-align: center; color: #0f0; cursor: pointer;">Space Shooter Game</h2>
             <canvas style="margin-left: 300px;" id="gameCanvas" width="600" height="600"></canvas>
         </div>
+        
+        <h1><span id="visitorCount">0</span></h1>
     </section>
 
     <script>
@@ -416,6 +418,32 @@
         setInterval(createEnemy, 1000);
         canvas.style.display = "none"; 
     </script>
+
+<script>
+    function generateVisitorId() {
+        return `${navigator.userAgent}-${navigator.language}-${screen.width}x${screen.height}`;
+    }
+
+    function trackUniqueVisitor() {
+        let visitorCount = localStorage.getItem('visitorCount') || 0;
+        let visitorId = generateVisitorId();
+
+        let knownVisitors = JSON.parse(localStorage.getItem('knownVisitors')) || [];
+
+        if (!knownVisitors.includes(visitorId)) {
+            knownVisitors.push(visitorId);
+            localStorage.setItem('knownVisitors', JSON.stringify(knownVisitors));
+
+            visitorCount++;
+            localStorage.setItem('visitorCount', visitorCount);
+        }
+
+        document.getElementById('visitorCount').textContent = visitorCount;
+    }
+
+    trackUniqueVisitor();
+</script>
+
 </body>
 
 </html>
