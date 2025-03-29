@@ -124,6 +124,19 @@
             <div class="project-section">
                 <h3>Ready-made projects</h3>
                 <div class="project">
+                    <a href="https://urban-druids.itch.io/conspiraid" target="_blank">
+                        <div class="project-title">ConspiRaid</div>
+                        <img src="image/ConspiRaid.png" alt="ConspiRaid">
+                    </a>
+                    <p>Attention! Code red! Unidentified flying object crashed in the desert! Organize a perimeter immediately! <br>
+
+                        Use the Voice of Truth traveling mouthpieces to convince all the curious that there is nothing of interest here.<br> 
+                        
+                        Build marching barracks to ensure that infantry are in an enclosed area.<br>
+                        
+                        And remember! Do not, under any circumstances, allow civilians into a classified facility.<br></p>
+                </div>
+                <div class="project">
                     <a href="https://itch.io/jam/brackeys-13/rate/3348814" target="_blank">
                         <div class="project-title">Terrible supermarket</div>
                         <img src="image/TerribleSupermarket.png" alt="Terrible supermarket">
@@ -237,8 +250,6 @@
             <h2 id="gameTitle" style="text-align: center; color: #0f0; cursor: pointer;">Space Shooter Game</h2>
             <canvas style="margin-left: 300px;" id="gameCanvas" width="600" height="600"></canvas>
         </div>
-        
-        <h1><span id="visitorCount">0</span></h1>
     </section>
 
     <script>
@@ -418,31 +429,6 @@
         setInterval(createEnemy, 1000);
         canvas.style.display = "none"; 
     </script>
-
-<script>
-    function generateVisitorId() {
-        return `${navigator.userAgent}-${navigator.language}-${screen.width}x${screen.height}`;
-    }
-
-    function trackUniqueVisitor() {
-        let visitorCount = localStorage.getItem('visitorCount') || 0;
-        let visitorId = generateVisitorId();
-
-        let knownVisitors = JSON.parse(localStorage.getItem('knownVisitors')) || [];
-
-        if (!knownVisitors.includes(visitorId)) {
-            knownVisitors.push(visitorId);
-            localStorage.setItem('knownVisitors', JSON.stringify(knownVisitors));
-
-            visitorCount++;
-            localStorage.setItem('visitorCount', visitorCount);
-        }
-
-        document.getElementById('visitorCount').textContent = visitorCount;
-    }
-
-    trackUniqueVisitor();
-</script>
 
 </body>
 
