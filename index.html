@@ -59,6 +59,7 @@
             <div class="header-text">
                 <h1 style="color: aliceblue; font-size: 70px;"> UNITY</h1>
                 <h1 style="color: rgb(55, 55, 55); font-size: 65px;"> DEVELOPER</h1>
+                <h1 style="color: aliceblue; font-size: 70px;"> +<span id="years-count"></span> YEARS</h1>
                 <h2 style="color: gray;">Developer of games and websites. <br> As well as anything for personal
                     interest.</h2>
                 <div class="header-anchor">
@@ -428,6 +429,14 @@
 
         setInterval(createEnemy, 1000);
         canvas.style.display = "none"; 
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const startYear = 2022;
+            const currentYear = new Date().getFullYear();
+            document.getElementById("years-count").textContent = currentYear - startYear;
+        });
     </script>
 
 </body>
