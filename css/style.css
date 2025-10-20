@@ -328,7 +328,7 @@ body {
 .project-title {
     font-weight: bold;
     color: #ffb400;
-    margin-top: 10px;
+    margin-top: 0px;
     margin-bottom: 10px;
 }
 
@@ -378,6 +378,61 @@ body {
 
 #gameCanvas {
     display: none; 
+}
+
+.project-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 40px;
+    margin: 40px 0;
+}
+
+.project-image img {
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.project-image img:hover {
+    transform: scale(1.05);
+}
+
+.project-info {
+    text-align: left;
+    max-width: 600px;
+}
+
+.project-info p {
+    color: #ddd;
+    font-size: 0.95em;
+    margin-bottom: 10px;
+}
+
+.tech-stack {
+    margin-top: 15px;
+}
+
+.tech-stack strong {
+    color: #00c3ff;
+}
+
+.tech-stack ul {
+    list-style: none;
+    padding: 0;
+    margin: 8px 0 0 0;
+}
+
+.tech-stack li {
+    display: inline-block;
+    background: #444;
+    color: #fff;
+    padding: 6px 10px;
+    margin-right: 8px;
+    margin-top: 8px;
+    border-radius: 5px;
+    font-size: 0.85em;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {  
