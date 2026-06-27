@@ -89,7 +89,7 @@
             </div>
             <div class="about-right">
                 <h2>About me</h2>
-                <p>I am Volodymyr, a Unity C# Game Developer with over 2 years of commercial and indie experience, and more than 4 years of general programming experience. </p>
+                <p>I am Volodymyr, a Unity C# Game Developer with over <span id="about-years-count"></span> years of commercial and indie experience, and more than <span id="prog-years-count"></span> years of general programming experience. </p>
 
                 <p>During this time, I have developed several websites, built multiple Unity games, and created local Discord bots. </p>
 
@@ -553,9 +553,23 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const startYear = 2022;
             const currentYear = new Date().getFullYear();
-            document.getElementById("years-count").textContent = currentYear - startYear;
+            
+            const startYearUnity = 2022;
+            const unityYears = currentYear - startYearUnity;
+            document.getElementById("years-count").textContent = unityYears;
+            
+            const aboutUnityYearsElement = document.getElementById("about-years-count");
+            if (aboutUnityYearsElement) {
+                aboutUnityYearsElement.textContent = unityYears;
+            }
+
+            const startYearProg = 2020;
+            const progYears = currentYear - startYearProg;
+            const aboutProgYearsElement = document.getElementById("prog-years-count");
+            if (aboutProgYearsElement) {
+                aboutProgYearsElement.textContent = progYears;
+            }
         });
     </script>
 
